@@ -10,7 +10,7 @@ $bg: #f6f6f6;
 
 %quicksand-500 {
   font-family: 'Quicksand-Medium', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 %roboto-400 {
@@ -21,4 +21,21 @@ $bg: #f6f6f6;
 %roboto-700 {
   font-family: 'Roboto-Bold', sans-serif;
   font-weight: 700;
+}
+
+
+%btn {
+  @extend %roboto-400;
+  padding: 12px 26px;
+  text-transform: uppercase;
+  background-color: $accent;
+  color: #fff;
+  box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3);
+}
+
+@function max($numbers...) {
+  @return m#{a}x(#{$numbers});
+}
+@function min($numbers...) {
+  @return m#{i}n(#{$numbers});
 }
