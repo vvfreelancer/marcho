@@ -799,3 +799,34 @@
     margin-bottom: 25px;
   }
 }
+
+.page-404 {
+  padding: 110px 0 120px;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__content {
+    max-width: 570px;
+    width: 100%;
+  }
+  &__title {
+    @extend %roboto-700;
+    font-size: 48px;
+    color: #28384f;
+    margin-bottom: 40px;
+  }
+  &__text {
+    margin-bottom: 55px;
+    max-width: 470px;
+  }
+  &__link {
+    padding: 18px 32px;
+    @extend %roboto-400;
+    text-transform: uppercase;
+    background-color: $accent;
+    color: #fff;
+    box-shadow: 0px 7px 20px 0px rgb(255 17 48 / 30%);
+  }
+}
