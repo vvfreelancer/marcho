@@ -189,6 +189,19 @@
   }
 }
 
+.top {
+  &__container {
+    padding: 120px 0 130px;
+    margin: 0 auto;
+    max-width: 1700px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    text-align: center;
+  }
+
+}
+
 .top-slider {
   background-image: url('../images/decor/top-slider-bg.png');
   padding-top: 65px;
@@ -735,5 +748,51 @@
     width: 10px;
     height: 8px;
     background-image: url('../images/icons/arrow.svg');
+  }
+}
+
+.modal {
+  padding-top: 100px;
+  max-width: 570px;
+  margin: 0 auto 115px;
+  &__links {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  &__link {
+    color: #909090;
+    font-size: 22px;
+    @extend %roboto-400;
+    text-transform: uppercase;
+    margin: 0 30px;
+  }
+  &__link--active {
+    color: $accent;
+  }
+  &__label {
+    display: block;
+    margin-bottom: 30px;
+  }
+  &__input {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: $bg;
+    padding: 4px 15px;
+  }
+  &__btn {
+    display: block;
+    padding: 14px 0;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    background-color: $title;
+    text-transform: uppercase;
+    color: #fff;
+    @extend %roboto-400;
+    margin-bottom: 12px;
+  }
+  &__error {
+    color: $accent;
   }
 }
