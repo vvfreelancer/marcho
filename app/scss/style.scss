@@ -490,7 +490,8 @@
 }
 
 .product-item {
-  width: 370px;
+  max-width: 355px;
+  width: 100%;
   text-align: center;
 
   &.product-item--list {
