@@ -1,0 +1,61 @@
+.modal {
+  padding-top: 100px;
+  max-width: 570px;
+  margin: 0 auto 115px;
+
+  &__links {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  &__link {
+    color: #909090;
+    font-size: 22px;
+    @extend %roboto-400;
+    text-transform: uppercase;
+    margin: 0 30px;
+  }
+
+  &__link--active {
+    color: $accent;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 30px;
+  }
+  &__label--checkbox {
+    margin-bottom: 20px;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    height: 60px;
+    margin-top: 5px;
+    padding: 4px 15px;
+    border: none;
+    background-color: $bg;
+  }
+
+  &__btn {
+    display: block;
+    padding: 14px 0;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    background-color: $title;
+    text-transform: uppercase;
+    color: #fff;
+    @extend %roboto-400;
+    margin-bottom: 12px;
+  }
+
+  &__error {
+    color: $accent;
+  }
+
+  &__text {
+    margin-bottom: 25px;
+  }
+}
