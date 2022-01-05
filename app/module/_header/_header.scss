@@ -5,12 +5,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
   }
 }
 
 .menu {
   &__list {
     display: flex;
+  }
+  &__btn {
+    display: none;
   }
 
   &__list-item+.menu__list-item {
@@ -60,5 +64,99 @@
     line-height: 20px;
     background-color: $accent;
     color: #fff;
+  }
+}
+
+@media (max-width: 1200px) {
+  .header {
+    &__inner {
+      padding-right: 10px;
+    }
+  }
+}
+@media (max-width: 860px) {
+  .menu {
+    order: 1;
+    margin-left: 40px;
+    &__list {
+      z-index: 5;
+      position: absolute;
+      top: 120px;
+      width: 100%;
+      left: 0;
+      flex-direction: column;
+      align-items: center;
+      transform: translateY(-200%);
+      background-color: #fff;
+      &.menu__list--active {
+        transform: translateY(0%);
+        transition: all .3s;
+      }
+    }
+     &__list-item+.menu__list-item {
+       padding-left: 15px;
+     }
+     &__list-item {
+       width: 100%;
+       padding: 0 15px;
+       text-align: center;
+     }
+     &__list-link {
+       display: block;
+       padding: 12px 0;
+     }
+    &__btn {
+      width: 44px;
+      height: 44px;
+      border: none;
+      background-color: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      padding: 0;
+      span {
+         width: 70%;
+         height: 3px;
+         background-color: $title;
+      }
+      &::after,
+      &::before {
+        content: '';
+        position: absolute;
+        width: 70%;
+        height: 3px;
+        background-color: $title;
+      }
+      &::before {
+        top: 10px;
+      }
+      &::after {
+        bottom: 10px;
+      }
+    }
+  }
+  .user-nav {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .header {
+    &__inner {
+      padding-right: 0;
+    }
+  }
+  .menu {
+    order: 0;
+    &__list {
+      top: 140px;
+    }
+  }
+  .user-nav {
+    width: 100%;
+    margin-top: 35px;
+    justify-content: flex-end;
+    padding-right: 15px;
   }
 }
