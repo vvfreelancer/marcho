@@ -1,0 +1,162 @@
+.header {
+  padding: 40px 0;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+.menu {
+  &__list {
+    display: flex;
+  }
+  &__btn {
+    display: none;
+  }
+
+  &__list-item+.menu__list-item {
+    padding-left: 35px;
+  }
+
+  &__list-link {
+    color: $title;
+    padding-bottom: 0 2px 1px;
+    transition: all .5s;
+    @extend %roboto-400;
+
+    &:hover {
+      color: $accent;
+      border-bottom: 1px solid $accent;
+      @extend %roboto-700;
+    }
+  }
+
+  &__list-link--active {
+    color: $accent;
+    border-bottom: 1px solid $accent;
+    @extend %roboto-700;
+  }
+}
+
+.user-nav {
+  display: flex;
+
+  &__link {
+    position: relative;
+  }
+
+  &__link+.user-nav__link {
+    padding-left: 25px;
+  }
+
+  &__num {
+    position: absolute;
+    top: -9px;
+    right: -14px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 12px;
+    line-height: 20px;
+    background-color: $accent;
+    color: #fff;
+  }
+}
+
+@media (max-width: 1200px) {
+  .header {
+    &__inner {
+      padding-right: 10px;
+    }
+  }
+}
+@media (max-width: 860px) {
+  .menu {
+    order: 1;
+    margin-left: 40px;
+    &__list {
+      z-index: 5;
+      position: absolute;
+      top: 120px;
+      width: 100%;
+      left: 0;
+      flex-direction: column;
+      align-items: center;
+      transform: translateY(-200%);
+      background-color: #fff;
+      &.menu__list--active {
+        transform: translateY(0%);
+        transition: all .3s;
+      }
+    }
+     &__list-item+.menu__list-item {
+       padding-left: 15px;
+     }
+     &__list-item {
+       width: 100%;
+       padding: 0 15px;
+       text-align: center;
+     }
+     &__list-link {
+       display: block;
+       padding: 12px 0;
+     }
+    &__btn {
+      width: 44px;
+      height: 44px;
+      border: none;
+      background-color: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      padding: 0;
+      span {
+         width: 70%;
+         height: 3px;
+         background-color: $title;
+      }
+      &::after,
+      &::before {
+        content: '';
+        position: absolute;
+        width: 70%;
+        height: 3px;
+        background-color: $title;
+      }
+      &::before {
+        top: 10px;
+      }
+      &::after {
+        bottom: 10px;
+      }
+    }
+  }
+  .user-nav {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .header {
+    &__inner {
+      padding-right: 0;
+    }
+  }
+  .menu {
+    order: 0;
+    &__list {
+      top: 140px;
+    }
+  }
+  .user-nav {
+    width: 100%;
+    margin-top: 35px;
+    justify-content: flex-end;
+    padding-right: 15px;
+  }
+}
